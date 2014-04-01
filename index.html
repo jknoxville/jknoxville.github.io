@@ -1,0 +1,112 @@
+<html>
+<head>
+	<title>John Knox</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="jquery.js"></script>
+	<script>
+	$(function() {
+	  $('a[href*=#]:not([href=#])').click(function() {
+	    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+
+	      var target = $(this.hash);
+	      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+	      if (target.length) {
+	        $('html,body').animate({
+	          scrollTop: target.offset().top
+	        }, 1000);
+	        return false;
+	      }
+	    }
+	  });
+	});
+	</script>
+	<!--Google Analytics-->
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-38419707-2', 'jknoxville.com');
+	  ga('send', 'pageview');
+	</script>
+</head>
+<body>
+	<div class="topbar">
+		<div class="navbar">
+			<a href="#me">
+				<div class="navbutton">
+					Home
+				</div>
+			</a>
+			<a href="#projects">
+				<div class="navbutton">
+					Projects
+				</div>
+			</a>
+		</div>
+	</div>
+	<div class="main-page">
+		<div id="main">
+			<h1 id="me">John Knox</h1>
+			<div class="description">
+				<img src="img/meonaboat.jpg" class="descrippic">
+				<div>
+					<p>I'm a software developer who loves electronic music and travelling the world.</p>
+					<p>Graduated from Cambridge in computer science in June 2013 and I'm now working as a web developer at Amazon Instant Video, in London.</p>
+					<br>
+					<a href="http://uk.linkedin.com/pub/john-knox/56/339/323">
+			      	<img src="http://www.linkedin.com/img/webpromo/btn_viewmy_160x33.png" width="160" height="33" border="0" alt="View John Knox's profile on LinkedIn">
+			    	</a>
+		    	</div>
+    		</div>
+			<h1 id="projects">My Projects</h1>
+			<div id="projectsection">
+
+				<!-- GitNote Project-->
+				<div class="description">
+					<img src="img/proj/cropped gitnote logo.png" class="descrippic projimg left">
+					<div>
+						<h3>GitNote</h3>
+						<h5>
+							A notes app for Android backed by your own Git repo
+						</h5>
+						<p>
+							Design inspried by evernote, though currently only basic functionality is provided. Provides automatic sync across multiple devices. Rather than some 3rd party having your notes, they are kept in your personal git repo, wherever that may be.
+						</p>
+						<p>
+							This was quickly hacked together in June 2013 and hasn't really been touched since, its on <a href="https://github.com/jknoxville/GitNote">github</a> if anyone wants to continue the project.
+						</p>
+							<a href="https://play.google.com/store/apps/details?id=com.jknoxville.gitnote">
+		                      <img alt="Get it on Google Play"
+		                           src="https://developer.android.com/images/brand/en_generic_rgb_wo_45.png" />
+		                    </a>
+					</div>
+				</div>
+
+				<!--raceTrace Project-->
+				<div class="description">
+					<img src="img/proj/rt2.png" class="descrippic projimg right">
+					<div>
+						<h3>RaceTrace</h3>
+						<h5>
+							An Android app for tracking race participants
+						</h5>
+						<p>
+							Mount your phone to your bike and keep up to date with the positions of the other riders.
+						</p>
+						<p>
+							Provides real-time location updates of all race participants. Set up sessions using either bluetooth or the internet. Uses either peer to peer communication or a central server.
+						</p>
+						<p>
+							This was my final year project in year 3 of the Cambridge Computer Science Tripos. It is functionally complete but not in any way polished. The associated dissertation is available <a href="res/racetrace.pdf">here</a>, and the source is on <a href="https://github.com/jknoxville/raceTrace">github</a>.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="footer">
+	</div>
+</body>
+</html>
