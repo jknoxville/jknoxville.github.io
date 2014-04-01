@@ -2,34 +2,8 @@
 <head>
 	<title>John Knox</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<script src="jquery.js"></script>
-	<script>
-	$(function() {
-	  $('a[href*=#]:not([href=#])').click(function() {
-	    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-
-	      var target = $(this.hash);
-	      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-	      if (target.length) {
-	        $('html,body').animate({
-	          scrollTop: target.offset().top
-	        }, 1000);
-	        return false;
-	      }
-	    }
-	  });
-	});
-	</script>
-	<!--Google Analytics-->
-	<script>
-	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-	  ga('create', 'UA-38419707-2', 'jknoxville.com');
-	  ga('send', 'pageview');
-	</script>
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript" src="custom-scripts.js"></script>
 </head>
 <body>
 	<div class="topbar">
@@ -84,7 +58,7 @@
 					</div>
 				</div>
 
-				<!--raceTrace Project-->
+				<!--RaceTrace Project-->
 				<div class="description">
 					<img src="img/proj/rt2.png" class="descrippic projimg right">
 					<div>
