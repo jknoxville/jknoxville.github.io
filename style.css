@@ -79,7 +79,7 @@ h1 {
 .descrippic {
 	border: 0;
 	float: left;
-	margin: 0 20px 0 20px;
+	margin: 0 20px 20px 20px;
 	max-width: 100%;
 	vertical-align: middle;
 	width: 500px;
