@@ -1,4 +1,1 @@
-jknoxville.github.io / jknoxville.com
-=====================================
-
-[Personal Website](jknoxville.com)
+Personal Website: [jknoxville.com](http://www.jknoxville.com)
