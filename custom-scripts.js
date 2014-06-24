@@ -12,4 +12,5 @@ target.length?target:$('[name='+this.hash.slice(1)+']');if(target.length)
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 ga('create', 'UA-38419707-2', 'jknoxville.com');
+ga('require', 'displayfeatures');
 ga('send', 'pageview');
