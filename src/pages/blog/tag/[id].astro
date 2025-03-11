@@ -1,15 +1,27 @@
 ---
+import { getCollection, render } from "astro:content";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
+// 1. Generate a new path for every collection entry
+const { tag } = Astro.props;
+export async function getStaticPaths() {
+  const tags = [
+    ...new Set(
+      (await getCollection("blog"))
+        .map((post) => post.data.tags)
+        .flat()
+        .toSorted()
+    ),
+  ].filter(Boolean) as string[];
+  return tags.map((tag) => ({
+    params: { id: tag },
+    props: { tag },
+  }));
+}
 
-import { getCollection } from "astro:content";
 const posts = await getCollection("blog", (entry) =>
-  entry.data.tags?.includes("test")
+  entry.data.tags?.includes(tag)
 );
 ---
-
-Hello
-
-{posts.map((post) => <div>{post.data.title}</div>)}
 
 <BaseLayout
   title={"test"}
@@ -18,7 +30,7 @@ Hello
   current="blog"
 >
   <div class="container">
-    <h1>Blog</h1>
+    <h1>#{tag}</h1>
     {
       posts.map((post, index) => {
         const href = `/blog/${post.id}`;
