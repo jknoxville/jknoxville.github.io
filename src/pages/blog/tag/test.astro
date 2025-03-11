@@ -21,7 +21,7 @@ Hello
     <h1>Blog</h1>
     {
       posts.map((post, index) => {
-        const href = `/blog/${post.filePath?.split("/").pop()?.split(".").shift()}`;
+        const href = `/blog/${post.id}`;
         return (
           <div>
             {index !== 0 && <hr />}
