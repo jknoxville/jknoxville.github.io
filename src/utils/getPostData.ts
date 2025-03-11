@@ -6,7 +6,7 @@ type Post = {
   rawContent: () => string
 }
 
-export default function getPostData(post: Post) {
+export default function getPostData(post: Post): { slug: string|null|undefined; readingTime: string } {
   return {
     slug: post.file.split('/').pop()?.split('.').shift(),
     readingTime: readingTime(post.rawContent()).text,

@@ -11,7 +11,15 @@ export async function getStaticPaths() {
   }));
 }
 
-const { Content, frontmatter } = Astro.props.post;
+const { Content, frontmatter } = Astro.props.post as {
+  Content: any;
+  frontmatter: {
+    title: string;
+    description: string;
+    publishDate: string;
+    tags?: string[];
+  };
+};
 const { title, description, publishDate, tags } = frontmatter;
 const { slug, readingTime } = getPostData(Astro.props.post);
 const permalink = `${Astro.site.href}blog/${slug}`;
@@ -27,7 +35,7 @@ const permalink = `${Astro.site.href}blog/${slug}`;
     <p>{publishDate} ~ {readingTime}</p>
     <h1>{title}</h1>
     <p>
-      {tags.split(",").map((tag) => <a href={`/blog/tag/${tag}`}>#{tag}</a>)}
+      {tags?.map((tag) => <a href={`/blog/tag/${tag}`}>#{tag}</a>)}
     </p>
     <hr />
   </header>
