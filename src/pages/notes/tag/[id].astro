@@ -27,13 +27,13 @@ const posts = await getCollection("blog", (entry) =>
   title={"test"}
   description={"description"}
   permalink={"permalink"}
-  current="blog"
+  current="notes"
 >
   <div class="container">
     <h1>#{tag}</h1>
     {
       posts.map((post, index) => {
-        const href = `/blog/${post.id}`;
+        const href = `/notes/${post.id}`;
         return (
           <div>
             {index !== 0 && <hr />}

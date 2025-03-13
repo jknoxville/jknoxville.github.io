@@ -35,7 +35,7 @@ const permalink = `${Astro.site.href}blog/${slug}`;
     <p>{publishDate} ~ {readingTime}</p>
     <h1>{title}</h1>
     <p>
-      {tags?.map((tag) => <a href={`/blog/tag/${tag}`}>#{tag}</a>)}
+      {tags?.map((tag) => <a href={`/notes/tag/${tag}`}>#{tag}</a>)}
     </p>
     <hr />
   </header>
