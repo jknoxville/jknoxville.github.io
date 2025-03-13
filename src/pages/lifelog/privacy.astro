@@ -1,0 +1,33 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const title = "Life Log";
+const description = "Privacy Policy";
+const permalink = `${Astro.site?.href}about`;
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  permalink={permalink}
+  current="about"
+>
+  <div class="container">
+    <h1>Life Log</h1>
+    <h2>Privacy Policy</h2>
+    <p>
+      Life Log does not collect any user data. It doesn't even have internet
+      access.
+    </p>
+    <p>Transcription happens locally on your device.</p>
+    <p>All data is stored locally and never leaves your device.</p>
+    <p>
+      <h2>Permissions requested</h2>
+      <br />
+      <h4>Record Audio</h4>
+
+      The main interface with the app is via voice. The app needs this to be
+      able to listen and then transcribe.
+    </p>
+  </div>
+</BaseLayout>
