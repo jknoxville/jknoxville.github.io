@@ -1,3 +1,4 @@
+![](https://github.com/jknoxville/jknoxville.github.io/actions/workflows/astro.yml/badge.svg)
 
 ## 🚀 Project Structure
 
