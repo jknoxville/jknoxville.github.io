@@ -14,20 +14,7 @@
           "type": "string"
         },
         "publishDate": {
-          "anyOf": [
-            {
-              "type": "string",
-              "format": "date-time"
-            },
-            {
-              "type": "string",
-              "format": "date"
-            },
-            {
-              "type": "integer",
-              "format": "unix-time"
-            }
-          ]
+          "type": "string"
         },
         "updatedDate": {
           "anyOf": [
