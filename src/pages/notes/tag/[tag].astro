@@ -13,7 +13,7 @@ export async function getStaticPaths() {
     ),
   ].filter(Boolean) as string[];
   return tags.map((tag) => ({
-    params: { id: tag },
+    params: { tag },
     props: { tag },
   }));
 }
