@@ -58,7 +58,6 @@
       "required": [
         "id",
         "title",
-        "description",
         "publishDate"
       ],
       "additionalProperties": false
