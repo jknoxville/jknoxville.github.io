@@ -1,9 +1,9 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
-const title = "Blog";
+const title = "Notes";
 const description = "Latest articles.";
-const permalink = `${Astro.url}/blog`;
+const permalink = `${Astro.url}/notes`;
 
 let allPosts = await Astro.glob("../../data/blog-posts/*.md");
 allPosts = allPosts.sort(
