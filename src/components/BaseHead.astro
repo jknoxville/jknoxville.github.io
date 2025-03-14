@@ -54,10 +54,46 @@ const socialUrl = Astro.site?.href + "assets/social.png";
 </script>
 <script is:inline defer>
   document.addEventListener("astro:page-load", () => {
-    let script = document.createElement("script");
-    script.type = "text/javascript";
-    script.defer = true;
-    script.src = "https://tinylytics.app/embed/ixS2NSemyBcp_MtLRQWV/min.js";
-    document.body.appendChild(script);
+    const path = window.location.pathname;
+    const should_collect = localStorage.getItem("tinylytics_ignore") == null;
+    const current_url = encodeURIComponent(window.location.href);
+    const collect_url = "https://tinylytics.app/collector/ixS2NSemyBcp_MtLRQWV";
+    const set_ignore_param =
+      new URLSearchParams(document.location.search)?.get("tiny_ignore") ||
+      new URLSearchParams(document.location.search)?.get("ti");
+    const referrer =
+      document.referrer.indexOf(window.location.href) < 0
+        ? document.referrer
+        : "";
+    if (set_ignore_param) {
+      if (
+        set_ignore_param === "true" &&
+        localStorage.getItem("tinylytics_ignore") == null
+      ) {
+        localStorage.setItem("tinylytics_ignore", true);
+        should_collect = false;
+        alert("tinylytics will no longer track your own hits in this browser.");
+      } else if (
+        set_ignore_param === "false" &&
+        localStorage.getItem("tinylytics_ignore") != null
+      ) {
+        localStorage.removeItem("tinylytics_ignore");
+        should_collect = true;
+        alert(
+          "tinylytics has been enabled for this website, for this browser."
+        );
+      }
+      if (set_ignore_param === "true") {
+        localStorage.setItem("tinylytics_ignore", true);
+      }
+    }
+    if (should_collect) {
+      fetch(
+        `${collect_url}?url=${current_url}&path=${path}&referrer=${referrer}`,
+        {
+          method: "post",
+        }
+      );
+    }
   });
 </script>
