@@ -95,5 +95,20 @@ const socialUrl = Astro.site?.href + "assets/social.png";
         }
       );
     }
+    let hit_containers = document.querySelectorAll(".tinylytics_hits");
+    if (hit_containers) {
+      let hits_count_url = "https://tinylytics.app/hits/ixS2NSemyBcp_MtLRQWV";
+      hit_containers.forEach((hits_container) => {
+        if (path) {
+          fetch(`${hits_count_url}?path=${path}`)
+            .then((response) => response.json())
+            .then((data) => {
+              if (data.count != null) {
+                hits_container.innerHTML = `${data.count}`;
+              }
+            });
+        }
+      });
+    }
   });
 </script>
