@@ -52,5 +52,12 @@ const socialUrl = Astro.site?.href + "assets/social.png";
     root.classList.remove("theme-dark");
   }
 </script>
-<script src="https://tinylytics.app/embed/ixS2NSemyBcp_MtLRQWV.js" defer
-></script>
+<script is:inline defer>
+  document.addEventListener("astro:page-load", () => {
+    let script = document.createElement("script");
+    script.type = "text/javascript";
+    script.defer = true;
+    script.src = "https://tinylytics.app/embed/ixS2NSemyBcp_MtLRQWV/min.js";
+    document.body.appendChild(script);
+  });
+</script>
